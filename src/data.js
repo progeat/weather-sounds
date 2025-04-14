@@ -8,7 +8,7 @@ export default [
   {
     id: 2,
     icon: 'cloud-rain',
-    background: 'rain-bg',
+    background: 'rainy-bg',
     sound: 'rain',
   },
   {
