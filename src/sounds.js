@@ -7,11 +7,21 @@ class Sound {
   play() {
     if (!this.playing) {
       this.audio.play();
+      this.audio.volume = 50 / 100;
       this.playing = true;
     } else {
       this.audio.pause();
       this.playing = false;
     }
+  }
+
+  stop() {
+    this.audio.load();
+    this.playing = false;
+  }
+
+  setVolume(volume) {
+    this.audio.volume = volume;
   }
 }
 
