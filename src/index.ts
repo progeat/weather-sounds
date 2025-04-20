@@ -1,23 +1,28 @@
 import { buttons } from './buttons';
 import { Sound } from './sounds';
-import DATA from './data';
+import { data } from './data';
 import './index.scss';
 
-let currentSound = null;
+let currentSound: Sound | null = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const buttonsContainer = document.querySelector('.buttons-container');
-  const volumeControl = document.getElementById('volume');
+  const buttonsContainer: HTMLElement | null =
+    document.querySelector('.buttons-container');
+  const volumeControl: HTMLInputElement | null = document.getElementById(
+    'volume'
+  ) as HTMLInputElement;
 
   const summerSound = new Sound('summer');
   const rainSound = new Sound('rain');
   const winterSound = new Sound('winter');
 
-  buttons.forEach((button) => {
+  buttons.forEach((button: HTMLButtonElement) => {
     button.addEventListener('click', () => {
-      const soundName = button.dataset.sound;
+      const soundName: string = button.dataset.sound;
 
-      const bgImg = DATA.find((obj) => obj.sound === soundName).background;
+      const bgImg: string = data.find(
+        (obj) => obj.sound === soundName
+      ).background;
 
       document.body.style.backgroundImage = `url('./assets/img/${bgImg}.jpg')`;
 
@@ -49,8 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buttonsContainer.append(...buttons);
 
-  volumeControl.addEventListener('input', ({ target }) => {
-    const volume = target.value / 100;
+  volumeControl.addEventListener('input', (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    const volume = Number(target.value) / 100;
     summerSound.setVolume(volume);
     rainSound.setVolume(volume);
     winterSound.setVolume(volume);
