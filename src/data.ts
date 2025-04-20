@@ -1,4 +1,11 @@
-export default [
+interface Button {
+  id: number;
+  icon: string;
+  background: string;
+  sound: string;
+}
+
+const data: Button[] = [
   {
     id: 1,
     icon: 'sun',
@@ -18,3 +25,5 @@ export default [
     sound: 'winter',
   },
 ];
+
+export { data, Button };
