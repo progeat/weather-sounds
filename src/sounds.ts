@@ -1,10 +1,13 @@
 class Sound {
-  constructor(soundName) {
+  public audio: HTMLAudioElement;
+  public playing: boolean;
+
+  constructor(soundName: string) {
     this.audio = new Audio(`./assets/sounds/${soundName}.mp3`);
     this.playing = false;
   }
 
-  play() {
+  public play(): void {
     if (!this.playing) {
       this.audio.play();
       this.audio.volume = 50 / 100;
@@ -15,12 +18,12 @@ class Sound {
     }
   }
 
-  stop() {
+  public stop(): void {
     this.audio.load();
     this.playing = false;
   }
 
-  setVolume(volume) {
+  public setVolume(volume: number): void {
     this.audio.volume = volume;
   }
 }
