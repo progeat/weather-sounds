@@ -11,6 +11,7 @@
 - Оптимизированная работа со статическими файлами (аудио, изображения, шрифты)
 - Webpack Dev Server с горячей перезагрузкой
 - Интеграция ESLint для контроля качества кода
+- Интеграция TypeScript для типизации кода
 - Чистый JavaScript
 
 ## Особенности реализации
@@ -25,14 +26,16 @@
 - Webpack 5
 - Sass (SCSS)
 - ESLint
+- TypeScript
 - HTML5
 - Webpack Plugins:
-  > HTMLWebpackPlugin
-  > MiniCssExtractPlugin
-  > CopyWebpackPlugin
-  > TerserWebpackPlugin
-  > EslintWebpackPlugin
-  > CssMinimizerWebpackPlugin
+
+> HTMLWebpackPlugin
+> MiniCssExtractPlugin
+> CopyWebpackPlugin
+> TerserWebpackPlugin
+> EslintWebpackPlugin
+> CssMinimizerWebpackPlugin
 
 ## Установка и запуск
 
