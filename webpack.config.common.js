@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.ts',
+  entry: './scripts/index.ts',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -13,6 +13,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js'],
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -23,10 +26,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'public/favicon.png'),
           to: path.resolve(__dirname, 'dist'),
-        },
-        {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
         },
       ],
     }),
@@ -53,6 +52,10 @@ module.exports = {
           },
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(mp3|jpg|png|svg)$/,
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
