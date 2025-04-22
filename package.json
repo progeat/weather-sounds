@@ -16,10 +16,12 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.24.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
-    "eslint": "^9.24.0",
+    "eslint": "^9.25.1",
     "eslint-webpack-plugin": "^5.0.0",
     "globals": "^16.0.0",
     "html-webpack-plugin": "^5.6.3",
