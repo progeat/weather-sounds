@@ -37,10 +37,10 @@ list.addEventListener('click', (e) => {
   }
 });
 
-function renderItem(item: WeatherItemConfig) {
-  const listItem = document.createElement('li');
-  const weatherItem = document.createElement('button');
-  const itemIcon = document.createElement('img');
+function renderItem(item: WeatherItemConfig): void {
+  const listItem = document.createElement('li') as HTMLLIElement;
+  const weatherItem = document.createElement('button') as HTMLButtonElement;
+  const itemIcon = document.createElement('img') as HTMLImageElement;
 
   listItem.classList.add('weather-list__item');
   weatherItem.classList.add('weather-item');
