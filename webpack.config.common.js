@@ -5,11 +5,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  entry: './scripts/index.ts',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -20,10 +26,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'public/favicon.png'),
           to: path.resolve(__dirname, 'dist'),
-        },
-        {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
         },
       ],
     }),
@@ -52,8 +54,17 @@ module.exports = {
         ],
       },
       {
+        test: /\.(mp3|jpg|png|svg)$/,
+        type: 'asset/resource',
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },

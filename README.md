@@ -7,60 +7,91 @@
 Реализовано в соответствии с заданием:
 
 - Настроенный Webpack с разделением на dev/prod конфиги
+
 - Поддержка HTML, CSS, Sass через соответствующие лоадеры
+
 - Оптимизированная работа со статическими файлами (аудио, изображения, шрифты)
+
 - Webpack Dev Server с горячей перезагрузкой
+
 - Интеграция ESLint для контроля качества кода
-- Чистый JavaScript
+
+- Интеграция TypeScript для типизации кода
 
 ## Особенности реализации
 
-- Использование чистого JavaScript.
+- Использование TypeScript.
+
 - Автоматическая остановка предыдущего звука при запуске другого.
+
 - Возможность приостановки и возобновления текущего звука.
+
 - Динамическая смена фона страницы при выборе звука.
 
 ## Используемые технологии
 
 - Webpack 5
+
 - Sass (SCSS)
+
 - ESLint
+
+- TypeScript
+
 - HTML5
+
 - Webpack Plugins:
-  > HTMLWebpackPlugin
-  > MiniCssExtractPlugin
-  > CopyWebpackPlugin
-  > TerserWebpackPlugin
-  > EslintWebpackPlugin
-  > CssMinimizerWebpackPlugin
+
+1. HTMLWebpackPlugin
+
+2. MiniCssExtractPlugin
+
+3. CopyWebpackPlugin
+
+4. TerserWebpackPlugin
+
+5. EslintWebpackPlugin
+
+6. CssMinimizerWebpackPlugin
 
 ## Установка и запуск
 
 1. Клонировать репозиторий локально
 
 ```bash
-    git clone https://github.com/progeat/weather-sounds.git
 
-    // Перейти в папку с проектом
-    cd weather-sounds
+git  clone  https://github.com/progeat/weather-sounds.git
+
+
+
+//  Перейти  в  папку  с  проектом
+
+cd  weather-sounds
+
 ```
 
 2. Установить зависимости:
 
 ```bash
-npm i
+
+npm  i
+
 ```
 
 3. Запуск в режиме разработки:
 
 ```bash
-npm run start
+
+npm  run  start
+
 ```
 
 4. Сборка production-версии:
 
 ```bash
-npm run build
+
+npm  run  build
+
 ```
 
 ## Автор
